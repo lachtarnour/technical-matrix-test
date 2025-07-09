@@ -111,9 +111,11 @@ class Matrix(object):
         j = 0
         A_ij = self.del_ligne(A,i)
         A_ij = self.del_column(A,j)
-
-        if A_ij.
-        det += (-1)**(i+j) * det(A_ij)
+        if len(A_ij) == 1 and len(A_ij[0]) == 1:
+            det += (-1)**(i+j) * A_ij[0][0]
+            j = j + 1
+        else:
+            det += (-1)**(i+j) * det(A_ij)
 
 
         
